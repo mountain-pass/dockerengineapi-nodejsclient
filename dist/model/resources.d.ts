@@ -1,0 +1,50 @@
+import { DeviceMapping } from './deviceMapping';
+import { DeviceRequest } from './deviceRequest';
+import { ResourcesBlkioWeightDevice } from './resourcesBlkioWeightDevice';
+import { ResourcesUlimits } from './resourcesUlimits';
+import { ThrottleDevice } from './throttleDevice';
+export declare class Resources {
+    'cpuShares'?: number;
+    'memory'?: number;
+    'cgroupParent'?: string;
+    'blkioWeight'?: number;
+    'blkioWeightDevice'?: Array<ResourcesBlkioWeightDevice>;
+    'blkioDeviceReadBps'?: Array<ThrottleDevice>;
+    'blkioDeviceWriteBps'?: Array<ThrottleDevice>;
+    'blkioDeviceReadIOps'?: Array<ThrottleDevice>;
+    'blkioDeviceWriteIOps'?: Array<ThrottleDevice>;
+    'cpuPeriod'?: number;
+    'cpuQuota'?: number;
+    'cpuRealtimePeriod'?: number;
+    'cpuRealtimeRuntime'?: number;
+    'cpusetCpus'?: string;
+    'cpusetMems'?: string;
+    'devices'?: Array<DeviceMapping>;
+    'deviceCgroupRules'?: Array<string>;
+    'deviceRequests'?: Array<DeviceRequest>;
+    'kernelMemory'?: number;
+    'kernelMemoryTCP'?: number;
+    'memoryReservation'?: number;
+    'memorySwap'?: number;
+    'memorySwappiness'?: number;
+    'nanoCpus'?: number;
+    'oomKillDisable'?: boolean;
+    'init'?: boolean | null;
+    'pidsLimit'?: number | null;
+    'ulimits'?: Array<ResourcesUlimits>;
+    'cpuCount'?: number;
+    'cpuPercent'?: number;
+    'iOMaximumIOps'?: number;
+    'iOMaximumBandwidth'?: number;
+    static discriminator: string | undefined;
+    static attributeTypeMap: Array<{
+        name: string;
+        baseName: string;
+        type: string;
+    }>;
+    static getAttributeTypeMap(): {
+        name: string;
+        baseName: string;
+        type: string;
+    }[];
+}
