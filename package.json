@@ -12,7 +12,7 @@
   "scripts": {
     "build": "tsc",
     "docs": "echo Please check here for latest spec - https://docs.docker.com/engine/api/latest/",
-    "clean": "rm -rf src && mkdir src",
+    "clean": "rm -rf src dist",
     "generate": "npm run generate:1_41",
     "generate:1_41": "npm run clean && ./scripts/generate.sh ${npm_package_config_SPEC_1_41}"
   },
