@@ -1,1 +1,0 @@
-{"version":3,"file":"localNodeState.js","sourceRoot":"","sources":["../../src/model/localNodeState.ts"],"names":[],"mappings":";;;AAiBA,IAAY,cAOX;AAPD,WAAY,cAAc;IACtB,yCAAc,EAAE,WAAA,CAAA;IAChB,4CAAiB,UAAU,cAAA,CAAA;IAC3B,2CAAgB,SAAS,aAAA,CAAA;IACzB,0CAAe,QAAQ,YAAA,CAAA;IACvB,yCAAc,OAAO,WAAA,CAAA;IACrB,0CAAe,QAAQ,YAAA,CAAA;AAC3B,CAAC,EAPW,cAAc,GAAd,sBAAc,KAAd,sBAAc,QAOzB"}

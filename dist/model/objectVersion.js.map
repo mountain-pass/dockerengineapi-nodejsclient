@@ -1,1 +1,0 @@
-{"version":3,"file":"objectVersion.js","sourceRoot":"","sources":["../../src/model/objectVersion.ts"],"names":[],"mappings":";;;AAiBA;IAAA;IAeA,CAAC;IAHU,iCAAmB,GAA1B;QACI,OAAO,aAAa,CAAC,gBAAgB,CAAC;IAC1C,CAAC;IAXM,2BAAa,GAAuB,SAAS,CAAC;IAE9C,8BAAgB,GAA0D;QAC7E;YACI,MAAM,EAAE,OAAO;YACf,UAAU,EAAE,OAAO;YACnB,MAAM,EAAE,QAAQ;SACnB;KAAK,CAAC;IAKf,oBAAC;CAAA,AAfD,IAeC;AAfY,sCAAa"}

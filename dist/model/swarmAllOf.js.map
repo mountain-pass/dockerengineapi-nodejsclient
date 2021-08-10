@@ -1,1 +1,0 @@
-{"version":3,"file":"swarmAllOf.js","sourceRoot":"","sources":["../../src/model/swarmAllOf.ts"],"names":[],"mappings":";;;AAeA;IAAA;IAeA,CAAC;IAHU,8BAAmB,GAA1B;QACI,OAAO,UAAU,CAAC,gBAAgB,CAAC;IACvC,CAAC;IAXM,wBAAa,GAAuB,SAAS,CAAC;IAE9C,2BAAgB,GAA0D;QAC7E;YACI,MAAM,EAAE,YAAY;YACpB,UAAU,EAAE,YAAY;YACxB,MAAM,EAAE,YAAY;SACvB;KAAK,CAAC;IAKf,iBAAC;CAAA,AAfD,IAeC;AAfY,gCAAU"}
