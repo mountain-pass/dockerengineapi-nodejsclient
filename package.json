@@ -1,0 +1,22 @@
+{
+  "name": "dockerengineapi-nodejsclient",
+  "version": "1.0.0",
+  "description": "A NodeJS client generated from the Docker Engine OpenApi spec.",
+  "author": "Nick Grealy <nickgrealy@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "config": {
+    "SPEC_1_41": "https://docs.docker.com/engine/api/v1.41.yaml"
+  },
+  "scripts": {
+    "build": "tsc",
+    "docs": "echo Please check here for latest spec - https://docs.docker.com/engine/api/latest/",
+    "clean": "rm -rf src && mkdir src",
+    "generate": "npm run generate:1_41",
+    "generate:1_41": "npm run clean && ./scripts/generate.sh ${npm_package_config_SPEC_1_41}"
+  },
+  "devDependencies": {
+    "typescript": "4.3.5"
+  }
+}
