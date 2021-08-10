@@ -6,7 +6,10 @@
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
-    "clean": "rm -rf src dist",
+    "build": "babel src -d dist",
+    "prepare": "npm run build",
+    "test": "mocha --require @babel/register --recursive",
+    "clean": "rm -rf src && mkdir src",
     "generate": "npm run generate:1_41",
     "generate:1_41": "npm run clean && ./scripts/generate.sh ${npm_package_config_SPEC_1_41}",
     "build": "babel src -d dist",
