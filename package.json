@@ -14,13 +14,14 @@
     "docs": "echo Please check here for latest spec - https://docs.docker.com/engine/api/latest/",
     "clean": "rm -rf src && mkdir src",
     "generate": "npm run generate:1_41",
-    "generate:1_41": "npm run clean && ./scripts/generate.sh ${npm_package_config_SPEC_1_41}"
+    "generate:1_41": "npm run clean && ./scripts/generate_swaggercodegen.sh ${npm_package_config_SPEC_1_41}"
   },
   "devDependencies": {
     "@types/node": "16.4.13",
     "typescript": "4.3.5"
   },
   "dependencies": {
+    "bluebird": "3.7.2",
     "request": "2.88.2"
   }
 }
