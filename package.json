@@ -5,22 +5,46 @@
   "author": "Nick Grealy <nickgrealy@gmail.com>",
   "license": "MIT",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "config": {
-    "SPEC_1_41": "https://docs.docker.com/engine/api/v1.41.yaml"
-  },
   "scripts": {
-    "build": "tsc",
-    "docs": "echo Please check here for latest spec - https://docs.docker.com/engine/api/latest/",
+    "build": "babel src -d dist",
+    "prepare": "npm run build",
+    "test": "mocha --require @babel/register --recursive",
     "clean": "rm -rf src && mkdir src",
     "generate": "npm run generate:1_41",
     "generate:1_41": "npm run clean && ./scripts/generate.sh ${npm_package_config_SPEC_1_41}"
   },
-  "devDependencies": {
-    "@types/node": "16.4.13",
-    "typescript": "4.3.5"
+  "browser": {
+    "fs": false
   },
   "dependencies": {
-    "request": "2.88.2"
-  }
+    "@babel/cli": "^7.0.0",
+    "superagent": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^8.0.1",
+    "sinon": "^7.2.0"
+  },
+  "files": [
+    "dist"
+  ]
 }
