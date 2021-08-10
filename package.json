@@ -1,14 +1,22 @@
 {
-  "name": "docker_engine_api",
-  "version": "1.41",
-  "description": "The_Engine_API_is_an_HTTP_API_served_by_Docker_Engine__It_is_the_API_theDocker_client_uses_to_communicate_with_the_Engine_so_everything_the_Dockerclient_can_do_can_be_done_with_the_API_Most_of_the_clients_commands_map_directly_to_API_endpoints__e_g__docker_psis_GET_containersjson__The_notable_exception_is_running_containerswhich_consists_of_several_API_calls__ErrorsThe_API_uses_standard_HTTP_status_codes_to_indicate_the_success_or_failureof_the_API_call__The_body_of_the_response_will_be_JSON_in_the_followingformat__message_page_not_found_VersioningThe_API_is_usually_changed_in_each_release_so_API_calls_are_versioned_toensure_that_clients_dont_break__To_lock_to_a_specific_version_of_the_APIyou_prefix_the_URL_with_its_version_for_example_call_v1_30info_to_usethe_v1_30_version_of_the_info_endpoint__If_the_API_version_specified_inthe_URL_is_not_supported_by_the_daemon_a_HTTP_400_Bad_Request_error_messageis_returned_If_you_omit_the_version_prefix_the_current_version_of_the_API__v1_41_is_used_For_example_calling_info_is_the_same_as_calling_v1_41info__Using_theAPI_without_a_version_prefix_is_deprecated_and_will_be_removed_in_a_future_release_Engine_releases_in_the_near_future_should_support_this_version_of_the_APIso_your_client_will_continue_to_work_even_if_it_is_talking_to_a_newer_Engine_The_API_uses_an_open_schema_model_which_means_server_may_add_extra_propertiesto_responses__Likewise_the_server_will_ignore_any_extra_query_parameters_andrequest_body_properties__When_you_write_clients_you_need_to_ignore_additionalproperties_in_responses_to_ensure_they_do_not_break_when_talking_to_newerdaemons__AuthenticationAuthentication_for_registries_is_handled_client_side__The_client_has_to_sendauthentication_details_to_various_endpoints_that_need_to_communicate_withregistries_such_as_POST_images_namepush__These_are_sent_asX_Registry_Auth_header_as_a__base64url_encoded_httpstools_ietf_orghtmlrfc4648section_5_JSON_string_with_the_following_structure__username_string__password_string__email_string__serveraddress_stringThe_serveraddress_is_a_domainIP_without_a_protocol__Throughout_thisstructure_double_quotes_are_required_If_you_have_already_got_an_identity_token_from_the__auth_endpoint_operationSystemAuthyou_can_just_pass_this_instead_of_credentials__identitytoken_9cbaf023786cd7___",
-  "license": "Unlicense",
+  "name": "dockerengineapi-nodejsclient",
+  "version": "1.0.0",
+  "description": "A NodeJS client generated from the Docker Engine OpenApi spec.",
+  "author": "Nick Grealy <nickgrealy@gmail.com>",
+  "license": "MIT",
   "main": "src/index.js",
-  "scripts": {
-    "test": "mocha --recursive"
+  "config": {
+    "SPEC_1_41": "https://docs.docker.com/engine/api/v1.41.yaml"
   },
   "browser": {
     "fs": false
+  },
+  "scripts": {
+    "test": "mocha --recursive",
+    "docs": "echo Please check here for latest spec - https://docs.docker.com/engine/api/latest/",
+    "clean": "rm -rf src && mkdir src",
+    "generate": "npm run generate:1_41",
+    "generate:1_41": "npm run clean && ./scripts/generate_swaggercodegen.sh ${npm_package_config_SPEC_1_41}"
   },
   "dependencies": {
     "superagent": "3.7.0",
